@@ -6,11 +6,11 @@ import {
   getChatPartners,
 } from "../controllers/message.controller.js";
 import { protectRoute } from "../middleware/auth.middleware.js";
-import { arcjetProtection } from "../middleware/auth.middleware.js";
+import { arcjetProtection } from "../middleware/arcjet.middleware.js";
 
 const router = express.Router();
 
-router.use(arcjetProtection, protectRoute);
+router.use(protectRoute);
 
 router.get("/contacts", getAllContacts);
 router.get("/chats", getChatPartners);
